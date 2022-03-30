@@ -1,28 +1,10 @@
-var myHeaders = new Headers();
-//replace with real api key
-myHeaders.append("x-rapidapi-key", "XxXxXxXxXxXxXxXxXxXxXxXx");
-myHeaders.append("x-rapidapi-host", "v1.hockey.api-sports.io");
-
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
-};
-
 var getScores = function() {
-    //access the server api
-    var apiUrl = "https://v1.hockey.api-sports.io/{endpoint}";
-
-    fetch(apiUrl, requestOptions)
-    .then(function(response){
-        if(response.ok){
-            response.json().then(function(data){
-                console.log(data);
-            })
-        }
-    })
-    .catch(error => console.log('error', error));
-};
-
+    var apiKey = '157ce318877b28613f3f957ccd28aa5239d122320755f5ddb85085a83b831836';
+    var apiUrl = 'https://apiv3.apifootball.com/?action=get_events&from=2022-01-12&to=2022-03-12&league_id=177&APIkey=' + apiKey;
+    fetch(apiUrl)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+}
 
 getScores();
