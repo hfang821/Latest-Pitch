@@ -11,30 +11,32 @@
 <body>
     <div class="navbar">
         <a href="index.html"><img src="images/placeholder.png" alt="placeholder" class="placeholder"></a>
-        <a href="live.html">LIVE SCORES</a>
-            <!--General information-->
+        <a href="live.html">LIVE SCORES</a>     
         <a href="past.html">PAST SCORES</a>
     </div>
 
+    <!--General information: Replicate this section in javaScript for more matches(set a max amount=5 of games shown)-->
     <div>
         <img id="leagueBadge"></img>
         <h1 id="leagueName"></h1>
         <h2 id="matchDate"></h2>
     <!-- Home Team information -->
-    <div id="homeTeam">
-        <img></img>
-        <h1 id="homeName"></h1>
-        <h2 id="homehtScore"></h2>
-        <h2 id="homeFtScore"></h2>
-    </div>
+        <div id="homeTeam">
+            <img class="homelogo"></img>
+            <h1 id="homeName"></h1>
+            <h2 id="homehtScore"></h2>
+            <h2 id="homeFtScore"></h2>
+        </div>
     <!-- away Team Information -->
-    <div id="awayTeam">
-        <img></img>
-        <h1 id="awayName"></h1>
-        <h2 id="awayhtScore"></h2>
-        <h2 id="awayFtScore"></h2>
-      <p>PAST</p>
-      
-    <script src="./script.js"></script>
+        <div id="awayTeam">
+            <img class="homelogo"></img>
+            <h1 id="awayName"></h1>
+            <h2 id="awayhtScore"></h2>
+            <h2 id="awayFtScore"></h2>
+        </div>
+    </div>
+
+
+    <script src="./pastscript.js"></script>
 </body>
 </html>
