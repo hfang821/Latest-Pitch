@@ -1,6 +1,61 @@
 body {
     background-color: #0f1010;
+    color: white;
+    font-family: 'Electrolize', sans-serif;
 }
+
+.hide {
+    display: none;
+}
+
+#submitbtn{
+    margin: 0px 45%;
+}
+
+.searchtitle {
+    font-size: 20px;
+}
+
+#period {
+    font-size: 50px;
+    white-space: nowrap;
+    margin:auto;
+    width: 50%;
+}
+
+#choose {
+    align-items: center;
+    margin: auto;
+    width: 50%;
+}
+
+#leagueSelect {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.searchbox{
+    display: inline-grid;
+    position: relative;
+}
+
+.searchboxwhole {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#from {
+    margin: 0px 50px;
+}
+
+#to {
+    margin: 0px 50px;
+}
+
 .navbar {
     background-color: #1a1b1b;
     position: fixed; 
@@ -29,12 +84,7 @@ body {
     height: 100%;
     width: auto;
 }
-p {
-    color: white;
-    font-size: 50px;
-    font-family: 'Electrolize', sans-serif;
-    padding: 50px 0px 0px 0px;
-}
+
 .todaycontainer{
     height: 200px;
     width: 80%;
@@ -67,4 +117,12 @@ p {
     width: auto;
 
     float: right;
+}
+
+#gameSelect {
+    margin-top: 100px;
+}
+
+label {
+    color: white;
 }

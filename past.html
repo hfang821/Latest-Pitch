@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
     <title>Footy Scores Social</title>
 </head>
+
 <body>
     <div class="navbar">
         <a href="index.html"><img src="images/placeholder.png" alt="placeholder" class="placeholder"></a>
@@ -16,24 +18,146 @@
     </div>
 
     <!--General information: Replicate this section in javaScript for more matches(set a max amount=5 of games shown)-->
-    <div>
+
+    <!--prompt a user of the period of the past games && the League Name. (from YYYY-MM-DD to YYYY-MM-DD)-->
+    <form id="gameSelect">
+        
+        <div id="leagueSelect">
+        <div id="choose">
+        <label>Choose a League</label> 
+        <input list="browsers" type="text" id="leagueInput"/>
+        <datalist id="browsers"> 
+            <option value="Ghana">
+            <option value="England">
+        </datalist>
+        <br><br>
+         </div>
+        
+        <label id="period">Choose the period of past Games: </label>
+    </div>
+        
+
+    <div class="searchboxwhole">
+
+        <div class="searchbox" id="from">
+        <p class="searchtitle">From</p>
+        <input type="date" id="fromDate"/>
+        </div>
+
+        <div class="searchbox" id="to">
+        <p class="searchtitle">To</p>
+        <input type="date" id="toDate"/><br><br>
+        </div>
+
+    </div>
+    <input type="submit" id="submitbtn">
+
+    </form>
+
+
+    <div class="hide" id="scoresInfo">
         <img id="leagueBadge"></img>
         <h1 id="leagueName"></h1>
-        <h2 id="matchDate"></h2>
-    <!-- Home Team information -->
-        <div id="homeTeam">
-            <img class="homelogo"></img>
-            <h1 id="homeName"></h1>
-            <h2 id="homehtScore"></h2>
-            <h2 id="homeFtScore"></h2>
-        </div>
-    <!-- away Team Information -->
-        <div id="awayTeam">
-            <img class="homelogo"></img>
-            <h1 id="awayName"></h1>
-            <h2 id="awayhtScore"></h2>
-            <h2 id="awayFtScore"></h2>
-        </div>
+
+            <!--The below section should be duplicated by a for loop for searched matches-->
+            <div class="clone">
+                <h2 class="matchDate"></h2>
+            <!-- Home Team information -->
+                <div class="homeTeam">
+                    <img class="homelogo"></img>
+                    <h1 class="homeName"></h1>
+                    <h2 class="homehtScore"></h2>
+                    <h2 class="homeFtScore"></h2>
+                </div>
+            <!-- away Team Information -->
+                <div class="awayTeam">
+                    <img class="awaylogo"></img>
+                    <h1 class="awayName"></h1>
+                    <h2 class="awayhtScore"></h2>
+                    <h2 class="awayFtScore"></h2>
+                </div>
+            </div>
+
+            <!--The below section should be duplicated by a for loop for searched matches-->
+            <div class="clone">
+                <h2 class="matchDate"></h2>
+            <!-- Home Team information -->
+                <div class="homeTeam">
+                    <img class="homelogo"></img>
+                    <h1 class="homeName"></h1>
+                    <h2 class="homehtScore"></h2>
+                    <h2 class="homeFtScore"></h2>
+                </div>
+            <!-- away Team Information -->
+                <div class="awayTeam">
+                    <img class="awaylogo"></img>
+                    <h1 class="awayName"></h1>
+                    <h2 class="awayhtScore"></h2>
+                    <h2 class="awayFtScore"></h2>
+                </div>
+            </div>
+
+
+            <!--The below section should be duplicated by a for loop for searched matches-->
+            <div class="clone">
+                <h2 class="matchDate"></h2>
+            <!-- Home Team information -->
+                <div class="homeTeam">
+                    <img class="homelogo"></img>
+                    <h1 class="homeName"></h1>
+                    <h2 class="homehtScore"></h2>
+                    <h2 class="homeFtScore"></h2>
+                </div>
+            <!-- away Team Information -->
+                <div class="awayTeam">
+                    <img class="awaylogo"></img>
+                    <h1 class="awayName"></h1>
+                    <h2 class="awayhtScore"></h2>
+                    <h2 class="awayFtScore"></h2>
+                </div>
+            </div>
+
+            <!--The below section should be duplicated by a for loop for searched matches-->
+            <div class="clone">
+                <h2 class="matchDate"></h2>
+            <!-- Home Team information -->
+                <div class="homeTeam">
+                    <img class="homelogo"></img>
+                    <h1 class="homeName"></h1>
+                    <h2 class="homehtScore"></h2>
+                    <h2 class="homeFtScore"></h2>
+                </div>
+            <!-- away Team Information -->
+                <div class="awayTeam">
+                    <img class="awaylogo"></img>
+                    <h1 class="awayName"></h1>
+                    <h2 class="awayhtScore"></h2>
+                    <h2 class="awayFtScore"></h2>
+                </div>
+            </div>
+
+
+            <!--The below section should be duplicated by a for loop for searched matches-->
+            <div class="clone">
+                <h2 class="matchDate"></h2>
+            <!-- Home Team information -->
+                <div class="homeTeam">
+                    <img class="homelogo"></img>
+                    <h1 class="homeName"></h1>
+                    <h2 class="homehtScore"></h2>
+                    <h2 class="homeFtScore"></h2>
+                </div>
+            <!-- away Team Information -->
+                <div class="awayTeam">
+                    <img class="awaylogo"></img>
+                    <h1 class="awayName"></h1>
+                    <h2 class="awayhtScore"></h2>
+                    <h2 class="awayFtScore"></h2>
+                </div>
+            </div>
+
+
+        <button id="restart">Search for another league/period.</button>
     </div>
 
 
