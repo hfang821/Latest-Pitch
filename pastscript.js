@@ -21,6 +21,9 @@ var awayNameEl = document.querySelectorAll('.awayName');
 var awayHtScoreEl = document.querySelectorAll('.awayhtScore');
 var awayFtScoreEl = document.querySelectorAll('.awayFtScore');
 
+periodFrom.setAttribute('max', moment().format('YYYY-MM-DD'))
+periodTo.setAttribute('max', moment().format('YYYY-MM-DD'));
+
 var league = [
     {
     league_name: 'england',
@@ -37,23 +40,26 @@ var formSubmitHandler = function(event){
 
     event.preventDefault();
 
-    loadEl.classList.remove('hide');
-
     //get value from the date range of the search
     var rangeFrom = periodFrom.value 
     var rangeTo = periodTo.value
 
-    console.log(rangeFrom);
-
     //get value from the league name
     var leagueSelected = leagueInputEl.value.trim().toLowerCase();
 
+    if(rangeFrom<rangeTo){
     for(let i =0; i<league.length; i++) {
         if(leagueSelected===league[i].league_name){
+            loadEl.classList.remove('hide');
             getScores(league[i].league_id, rangeFrom, rangeTo);
+            }
         }
+    } else {
+        window.alert('Please enter a from date earlier than to date.')
     }
     
+    periodFrom.value='';
+    periodTo.value='';
     leagueInputEl.value = '';
 
 }
@@ -91,42 +97,54 @@ var displayScores = function(scoresInfo){
         
         scoreBoardEl.innerHTML += 
 
-        `<div class="clone">
-            <h2 class="matchDate">${scoresInfo[scoresInfo.length-1-i].match_date}</h2>
-        
-            <div class="homeTeam">
+        `<div class="grid-x">
+
+            <div class="cell small-4">
+                <h1 class="home">Home Team:</h1>
                 <img class="homelogo" src="${scoresInfo[scoresInfo.length-1-i].team_home_badge}"></img>
-                <h1 class="homeName">${scoresInfo[scoresInfo.length-1-i].match_hometeam_name} 'VS'</h1>
-                <h2 class="homehtScore">${scoresInfo[scoresInfo.length-1-i].match_hometeam_halftime_score}</h2>
-                <h2 class="homeFtScore">${scoresInfo[scoresInfo.length-1-i].match_hometeam_ft_score}</h2>
+                <h1 class="homeName">${scoresInfo[scoresInfo.length-1-i].match_hometeam_name}</h1>
+                <h2 class="homehtScore">Half Time Score: ${scoresInfo[scoresInfo.length-1-i].match_hometeam_halftime_score}</h2>
+                <h2 class="homeFtScore">End Score: ${scoresInfo[scoresInfo.length-1-i].match_hometeam_ft_score}</h2>
+            </div>
+
+            <div class="cell small-4">
+                <h3 class="matchDate">Date of the match: ${scoresInfo[scoresInfo.length-1-i].match_date}</h2>
+                <img class="versus" src="./images/vs-41932.png">
+                
             </div>
         
-            <div class="awayTeam">
+            <div class="cell small-4">
+                <h2 class="away">Away Team: </h2>
                 <img class="awaylogo" src="${scoresInfo[scoresInfo.length-1-i].team_away_badge}"></img>
                 <h1 class="awayName">${scoresInfo[scoresInfo.length-1-i].match_awayteam_name}</h1>
-                <h2 class="awayhtScore">${scoresInfo[scoresInfo.length-1-i].match_awayteam_halftime_score}</h2>
-                <h2 class="awayFtScore">${scoresInfo[scoresInfo.length-1-i].match_awayteam_ft_score}</h2>
+                <h2 class="awayhtScore"> Half Time Score:  ${scoresInfo[scoresInfo.length-1-i].match_awayteam_halftime_score}</h2>
+                <h2 class="awayFtScore">End Score: ${scoresInfo[scoresInfo.length-1-i].match_awayteam_ft_score}</h2>
             </div>
-         </div>`
 
-        //const cloneSection = cloneEl.cloneNode(true);
-        //scoreBoardEl.appendChild(cloneSection);
+         </div>` ;
 
-        // homeLogoEl[i].src= scoresInfo[scoresInfo.length-1-i].team_home_badge;
-        // matchDateEl[i].textContent = "Date of the match: " + scoresInfo[scoresInfo.length-1-i].match_date;
-        // homeNameEl[i].textContent = 'Home Team: ' + scoresInfo[scoresInfo.length-1-i].match_hometeam_name + 'VS';
-        // homeHtScoreEl[i].textContent='Half Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_hometeam_halftime_score;
-        // homeFtScoreEl[i].textContent= 'Full Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_hometeam_ft_score;
+            var homeEl = document.querySelectorAll('.home');
+            var awayEl = document.querySelectorAll('.away');
+            var winner = document.createElement('img');
+            var even = document.createElement('img');
+            var even2 = document.createElement('img');
+            winner.setAttribute('src', "./images/PikPng.com_winner-png_1183198.png");
+            winner.classList.add('winnersymbol')
+            even.setAttribute('src', './images/scale-icon-413.png');
+            even.classList.add('evensymbol')
+            even2.setAttribute('src', './images/scale-icon-413.png');
+            even2.classList.add('evensymbol')
 
-        // awayLogoEl[i].src= scoresInfo[scoresInfo.length-1-i].team_away_badge;
-        // awayNameEl[i].textContent = 'Away Team: ' + scoresInfo[scoresInfo.length-1-i].match_awayteam_name;
-        // awayHtScoreEl[i].textContent='Half Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_awayteam_halftime_score;
-        // awayFtScoreEl[i].textContent= 'Full Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_awayteam_ft_score;
-
+            if(scoresInfo[scoresInfo.length-1-i].match_hometeam_ft_score > scoresInfo[scoresInfo.length-1-i].match_awayteam_ft_score) {
+                homeEl[i].append(winner);
+            } else if (scoresInfo[scoresInfo.length-1-i].match_hometeam_ft_score < scoresInfo[scoresInfo.length-1-i].match_awayteam_ft_score) {
+                awayEl[i].append(winner);
+            } else {
+                homeEl[i].append(even);
+                awayEl[i].append(even2);
+            }
     }
-    
 }
-
 
 submitEl.addEventListener('click', formSubmitHandler)
 restartEl.addEventListener('click', function(){location.reload()});

@@ -144,3 +144,19 @@ label {
 #to {
     margin: 0px 50px;
 }
+
+.grid-x {
+    border-top: 1px solid white;
+}
+
+.winnersymbol{
+    max-width: 15%;
+}
+
+.evensymbol{
+    max-width: 10%;
+}
+
+.versus {
+    max-width: 60%;
+}
