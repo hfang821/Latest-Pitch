@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
     <title>Footy Scores Social</title>
@@ -50,6 +51,11 @@
         </div>
 
     </div>
+
+    <div id="loading" class="hide">
+        loading...
+    </div>
+
     <input type="submit" id="submitbtn">
 
     </form>
@@ -60,107 +66,13 @@
         <h1 id="leagueName"></h1>
 
             <!--The below section should be duplicated by a for loop for searched matches-->
-            <div class="clone">
-                <h2 class="matchDate"></h2>
-            <!-- Home Team information -->
-                <div class="homeTeam">
-                    <img class="homelogo"></img>
-                    <h1 class="homeName"></h1>
-                    <h2 class="homehtScore"></h2>
-                    <h2 class="homeFtScore"></h2>
-                </div>
-            <!-- away Team Information -->
-                <div class="awayTeam">
-                    <img class="awaylogo"></img>
-                    <h1 class="awayName"></h1>
-                    <h2 class="awayhtScore"></h2>
-                    <h2 class="awayFtScore"></h2>
-                </div>
-            </div>
-
-            <!--The below section should be duplicated by a for loop for searched matches-->
-            <div class="clone">
-                <h2 class="matchDate"></h2>
-            <!-- Home Team information -->
-                <div class="homeTeam">
-                    <img class="homelogo"></img>
-                    <h1 class="homeName"></h1>
-                    <h2 class="homehtScore"></h2>
-                    <h2 class="homeFtScore"></h2>
-                </div>
-            <!-- away Team Information -->
-                <div class="awayTeam">
-                    <img class="awaylogo"></img>
-                    <h1 class="awayName"></h1>
-                    <h2 class="awayhtScore"></h2>
-                    <h2 class="awayFtScore"></h2>
-                </div>
-            </div>
-
-
-            <!--The below section should be duplicated by a for loop for searched matches-->
-            <div class="clone">
-                <h2 class="matchDate"></h2>
-            <!-- Home Team information -->
-                <div class="homeTeam">
-                    <img class="homelogo"></img>
-                    <h1 class="homeName"></h1>
-                    <h2 class="homehtScore"></h2>
-                    <h2 class="homeFtScore"></h2>
-                </div>
-            <!-- away Team Information -->
-                <div class="awayTeam">
-                    <img class="awaylogo"></img>
-                    <h1 class="awayName"></h1>
-                    <h2 class="awayhtScore"></h2>
-                    <h2 class="awayFtScore"></h2>
-                </div>
-            </div>
-
-            <!--The below section should be duplicated by a for loop for searched matches-->
-            <div class="clone">
-                <h2 class="matchDate"></h2>
-            <!-- Home Team information -->
-                <div class="homeTeam">
-                    <img class="homelogo"></img>
-                    <h1 class="homeName"></h1>
-                    <h2 class="homehtScore"></h2>
-                    <h2 class="homeFtScore"></h2>
-                </div>
-            <!-- away Team Information -->
-                <div class="awayTeam">
-                    <img class="awaylogo"></img>
-                    <h1 class="awayName"></h1>
-                    <h2 class="awayhtScore"></h2>
-                    <h2 class="awayFtScore"></h2>
-                </div>
-            </div>
-
-
-            <!--The below section should be duplicated by a for loop for searched matches-->
-            <div class="clone">
-                <h2 class="matchDate"></h2>
-            <!-- Home Team information -->
-                <div class="homeTeam">
-                    <img class="homelogo"></img>
-                    <h1 class="homeName"></h1>
-                    <h2 class="homehtScore"></h2>
-                    <h2 class="homeFtScore"></h2>
-                </div>
-            <!-- away Team Information -->
-                <div class="awayTeam">
-                    <img class="awaylogo"></img>
-                    <h1 class="awayName"></h1>
-                    <h2 class="awayhtScore"></h2>
-                    <h2 class="awayFtScore"></h2>
-                </div>
-            </div>
+           
 
 
         <button id="restart">Search for another league/period.</button>
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
     <script src="./pastscript.js"></script>
 </body>
 </html>

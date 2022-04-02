@@ -8,6 +8,7 @@ var leagueInputEl = document.getElementById('leagueInput');
 var periodFrom = document.getElementById('fromDate');
 var periodTo = document.getElementById('toDate');
 var cloneEl = document.getElementById('clone');
+var loadEl = document.getElementById('loading');
 
 //For the clone section
 var matchDateEl = document.querySelectorAll('.matchDate');
@@ -35,6 +36,8 @@ var league = [
 var formSubmitHandler = function(event){
 
     event.preventDefault();
+
+    loadEl.classList.remove('hide');
 
     //get value from the date range of the search
     var rangeFrom = periodFrom.value 
@@ -76,6 +79,7 @@ var getScores = function(league_id, from, to) {
 
 var displayScores = function(scoresInfo){
     
+    loadEl.classList.add('hide');
     scoreBoardEl.classList.remove("hide");
     formEl.classList.add("hide");
 
@@ -84,18 +88,40 @@ var displayScores = function(scoresInfo){
 
     for (i=0; i<scoresInfo.length; i++){
         
+        
+        scoreBoardEl.innerHTML += 
+
+        `<div class="clone">
+            <h2 class="matchDate">${scoresInfo[scoresInfo.length-1-i].match_date}</h2>
+        
+            <div class="homeTeam">
+                <img class="homelogo" src="${scoresInfo[scoresInfo.length-1-i].team_home_badge}"></img>
+                <h1 class="homeName">${scoresInfo[scoresInfo.length-1-i].match_hometeam_name} 'VS'</h1>
+                <h2 class="homehtScore">${scoresInfo[scoresInfo.length-1-i].match_hometeam_halftime_score}</h2>
+                <h2 class="homeFtScore">${scoresInfo[scoresInfo.length-1-i].match_hometeam_ft_score}</h2>
+            </div>
+        
+            <div class="awayTeam">
+                <img class="awaylogo" src="${scoresInfo[scoresInfo.length-1-i].team_away_badge}"></img>
+                <h1 class="awayName">${scoresInfo[scoresInfo.length-1-i].match_awayteam_name}</h1>
+                <h2 class="awayhtScore">${scoresInfo[scoresInfo.length-1-i].match_awayteam_halftime_score}</h2>
+                <h2 class="awayFtScore">${scoresInfo[scoresInfo.length-1-i].match_awayteam_ft_score}</h2>
+            </div>
+         </div>`
+
         //const cloneSection = cloneEl.cloneNode(true);
         //scoreBoardEl.appendChild(cloneSection);
-        homeLogoEl[i].src= scoresInfo[scoresInfo.length-1-i].team_home_badge;
-        matchDateEl[i].textContent = "Date of the match: " + scoresInfo[scoresInfo.length-1-i].match_date;
-        homeNameEl[i].textContent = 'Home Team: ' + scoresInfo[scoresInfo.length-1-i].match_hometeam_name + 'VS';
-        homeHtScoreEl[i].textContent='Half Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_hometeam_halftime_score;
-        homeFtScoreEl[i].textContent= 'Full Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_hometeam_ft_score;
 
-        awayLogoEl[i].src= scoresInfo[scoresInfo.length-1-i].team_away_badge;
-        awayNameEl[i].textContent = 'Away Team: ' + scoresInfo[scoresInfo.length-1-i].match_awayteam_name;
-        awayHtScoreEl[i].textContent='Half Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_awayteam_halftime_score;
-        awayFtScoreEl[i].textContent= 'Full Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_awayteam_ft_score;
+        // homeLogoEl[i].src= scoresInfo[scoresInfo.length-1-i].team_home_badge;
+        // matchDateEl[i].textContent = "Date of the match: " + scoresInfo[scoresInfo.length-1-i].match_date;
+        // homeNameEl[i].textContent = 'Home Team: ' + scoresInfo[scoresInfo.length-1-i].match_hometeam_name + 'VS';
+        // homeHtScoreEl[i].textContent='Half Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_hometeam_halftime_score;
+        // homeFtScoreEl[i].textContent= 'Full Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_hometeam_ft_score;
+
+        // awayLogoEl[i].src= scoresInfo[scoresInfo.length-1-i].team_away_badge;
+        // awayNameEl[i].textContent = 'Away Team: ' + scoresInfo[scoresInfo.length-1-i].match_awayteam_name;
+        // awayHtScoreEl[i].textContent='Half Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_awayteam_halftime_score;
+        // awayFtScoreEl[i].textContent= 'Full Time Score: ' + scoresInfo[scoresInfo.length-1-i].match_awayteam_ft_score;
 
     }
     

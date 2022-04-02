@@ -119,6 +119,7 @@ label {
 #choose {
     align-items: center;
     margin: auto;
+    overflow: inherit;
     width: 50%;
 }
 #leagueSelect {
