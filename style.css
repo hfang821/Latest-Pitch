@@ -59,11 +59,11 @@ div.pullUp a:hover:before {
 .sitetitle {
     color: white;
     text-align: center;
-    font-size: 150px;
+    font-size: 50%; 
     padding: 80px;
     white-space: nowrap;
     display: block;
-    max-width: 100%;
+    
     height: auto;
 }
 .clock {
