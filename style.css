@@ -23,6 +23,10 @@ body {
     left: 0;
     height: 70px;
 }
+
+.placeholder {
+    max-width: 61px;
+}
 .navbar a {
     float: left;
     display: block;
@@ -103,7 +107,7 @@ label {
     display: none;
 }
 #submitbtn {
-    margin: 0px 45%;
+    margin: 20px 45%;
 }
 
 .searchtitle {
@@ -119,6 +123,7 @@ label {
 #choose {
     align-items: center;
     margin: auto;
+    overflow: inherit;
     width: 50%;
 }
 #leagueSelect {
@@ -142,4 +147,44 @@ label {
 }
 #to {
     margin: 0px 50px;
+}
+
+.grid-x {
+    border-top: 1px solid white;
+}
+
+.winnersymbol{
+    max-width: 15%;
+}
+
+.evensymbol{
+    max-width: 10%;
+}
+
+.versus {
+    max-width: 60%;
+}
+
+#loading {
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+    margin: 0% 46%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+#choosesection {
+    margin: 0px 45%;
+}
+
+#restart {
+    margin-top: 70px;
 }
