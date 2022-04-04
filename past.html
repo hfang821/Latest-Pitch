@@ -12,11 +12,11 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <a href="index.html"><img src="./images/soccer.png" alt="placeholder" class="soccerimg"></a>
-        <a href="live.html">LIVE SCORES</a>     
+    <div class="navbar pullUp">
+        <a href="index.html"><img src="images/soccer.png" alt="soccerimg" class="soccerimg"></a>
+        <a href="live.html">LIVE SCORES</a>
         <a href="past.html">PAST SCORES</a>
-    </div>
+    </div>  
 
     <!--General information: Replicate this section in javaScript for more matches(set a max amount=5 of games shown)-->
 
@@ -37,29 +37,20 @@
         <label id="period">Choose the period of past Games: </label>
     </div>
         
-
     <div class="searchboxwhole">
-
         <div class="searchbox" id="from">
         <p class="searchtitle">From</p>
         <input type="date" id="fromDate"/>
         </div>
-
         <div class="searchbox" id="to">
         <p class="searchtitle">To</p>
         <input type="date" id="toDate"/><br><br>
         </div>
-
     </div>
 
-    <div id="loading" class="hide">
-    
-    </div>
+    <div id="loading" class="hide"></div>
 
-    <input type="submit" id="submitbtn">
-
-    </form>
-
+    <input type="submit" id="submitbtn"></form>
 
     <div class="hide" id="scoresInfo">
         <img id="leagueBadge"></img>

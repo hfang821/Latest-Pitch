@@ -1,9 +1,10 @@
 @charset "UTF-8";
-
+/*html styles*/
 html {
     height: 100%;
     width: 100%;
 }
+/*body styles*/
 body {
     height: 100%;
     width: 100%;
@@ -15,6 +16,11 @@ body {
     padding: 0;
     margin: 0;
   }
+/*nav bar styles*/
+.soccerimg {
+    height: 40px;
+    width: auto;
+}
 .navbar {
     background-color: #1a1b1b;
     position: fixed; 
@@ -22,10 +28,6 @@ body {
     top: 0;
     left: 0;
     height: 70px;
-}
-
-.placeholder {
-    max-width: 61px;
 }
 .navbar a {
     float: left;
@@ -56,75 +58,59 @@ div.pullUp a:hover:before {
 .navbar a:hover {
    color: black;
 }
-.soccerimg {
-    height: 100%;
-    width: auto;
-}
+/*homepage styles*/
 .sitetitle {
     color: white;
     text-align: center;
-    font-size: 50%; 
-    padding: 80px;
+    font-size: 8vw; 
+    padding: 80px 0px 30px 0px;
     white-space: nowrap;
     display: block;
-    
     height: auto;
+    margin: 0 auto;
 }
-.clock {
-    margin: auto;
-    width: 50%;
+.clock{
+    padding: 0px 0px 50px 0px;
+}
+.timetitle {
+    font-family: 'Electrolize', sans-serif;
+    color: #484848;
+    display: inline;
+}
+.h2container {
+    text-align: center;
+}
+h2 {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+    white-space: nowrap;
+    font-size: 2.5vw;
 }
 .viewertime {
     font-family: 'Orbitron', sans-serif;
-    font-size: 50px;
-    display: inline;
+    font-size: 2.5vw;
+    white-space: nowrap;
 }
-.gametime {
+.englandtime {
     font-family: 'Orbitron', sans-serif;
-    font-size: 50px;
-    display: inline;
+    font-size: 2.5vw;
+    white-space: nowrap;
 }
-.livecontainer { 
-    height: 150px;
-    width: 20%;
-    background-color: white;
-    display: block;
+.ghanatime {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5vw;
+    white-space: nowrap;
 }
-.livescores {
-    color: #0f1010;
+.favteam {
     text-align: center;
-    font-size: 40px;
-    height: 80px;
-    line-height: 80px;
+    font-size: 3vw;
 }
-#gameSelect {
-    margin-top: 100px;
-}
-label {
-    color: white;
-}
+/*general js styles*/
 .hide {
     display: none;
 }
 #submitbtn {
     margin: 20px 45%;
-}
-
-.searchtitle {
-    font-size: 20px;
-}
-
-#period {
-    font-size: 50px;
-    white-space: nowrap;
-    margin:auto;
-    width: 50%;
-}
-#choose {
-    align-items: center;
-    margin: auto;
-    overflow: inherit;
-    width: 50%;
 }
 #leagueSelect {
     display: block;
@@ -132,39 +118,18 @@ label {
     margin-right: auto;
     width: 50%;
 }
-.searchbox {
-    display: inline-grid;
-    position: relative;
-}
-.searchboxwhole {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-}
-#from {
-    margin: 0px 50px;
-}
-#to {
-    margin: 0px 50px;
-}
-
 .grid-x {
     border-top: 1px solid white;
 }
-
 .winnersymbol{
     max-width: 15%;
 }
-
 .evensymbol{
     max-width: 10%;
 }
-
 .versus {
     max-width: 60%;
 }
-
 #loading {
     border: 6px solid #f3f3f3; /* Light grey */
     border-top: 6px solid #3498db; /* Blue */
@@ -174,17 +139,66 @@ label {
     animation: spin 2s linear infinite;
     margin: 0% 46%;
 }
-
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
-
-
+}
+/*paststyles*/
+#gameSelect {
+    margin-top: 100px;
+}
+label {
+    color: white;
+}
+.searchtitle {
+    font-size: 20px;
+}
+#period {
+    font-size: 3.5vw;
+    white-space: nowrap;
+    text-align: center;
+}
+#choose {
+    align-items: center;
+    margin: auto;
+    overflow: inherit;
+    width: 50%;
+}
+.searchboxwhole {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.searchbox {
+    display: block;
+    position: relative;
+}
+#fromDate {
+    width: 200px;
+    height: 50px;
+}
+#toDate {
+    width: 200px;
+    height: 50px;
+}
+#from {
+    margin: 0px 50px;
+}
+#to {
+    margin: 0px 50px;
+}
 #choosesection {
     margin: 0px 45%;
 }
-
-#restart {
+.restart {
     margin-top: 70px;
+}
+#leagueInput {
+    background: none;
+    cursor: pointer;
+}
+#leagueInput:hover {
+    background-color: white;
+    transition: width 0.4s ease-in-out;
 }
