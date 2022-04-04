@@ -97,7 +97,8 @@ var displayScores = function(scoresInfo){
             </div>
 
             <div class="cell small-4">
-                <h3 class="matchDate">Date of the match: ${scoresInfo[scoresInfo.length-1-i].match_date}</h2>
+                <h3 class="matchDate">Date of the match: ${scoresInfo[scoresInfo.length-1-i].match_date}</h3>
+                <h3>Time of the match: ${scoresInfo[scoresInfo.length-1-i].match_time} </h3>
                 <img class="versus" src="./images/vs-41932.png">
                 
             </div>
