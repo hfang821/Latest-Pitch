@@ -10,17 +10,6 @@ var periodTo = document.getElementById('toDate');
 var cloneEl = document.getElementById('clone');
 var loadEl = document.getElementById('loading');
 
-//For the clone section
-var matchDateEl = document.querySelectorAll('.matchDate');
-var homeLogoEl = document.querySelectorAll('.homelogo');
-var homeNameEl = document.querySelectorAll('.homeName');
-var homeHtScoreEl = document.querySelectorAll('.homehtScore');
-var homeFtScoreEl = document.querySelectorAll('.homeFtScore');
-var awayLogoEl = document.querySelectorAll('.awaylogo');
-var awayNameEl = document.querySelectorAll('.awayName');
-var awayHtScoreEl = document.querySelectorAll('.awayhtScore');
-var awayFtScoreEl = document.querySelectorAll('.awayFtScore');
-
 periodFrom.setAttribute('max', moment().format('YYYY-MM-DD'))
 periodTo.setAttribute('max', moment().format('YYYY-MM-DD'));
 

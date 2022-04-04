@@ -4,31 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
     <title>Footy Scores Social</title>
 </head>
 <body>
       <div class="navbar">
-        <a href="index.html"><img src="images/placeholder.png" alt="placeholder" class="placeholder"></a>
+        <a href="index.html"><img src="./images/soccer.png" alt="placeholder" class="soccerimg"></a>
         <a href="live.html">LIVE SCORES</a>
         <a href="past.html">PAST SCORES</a>
       </div>
 
-      <!--Replicate this div container for more matches that are happening-->
-      <div class="livecontainer">
-        <p class="time">Time of the Match</p>
-        <!--HomeTeam-->
-        <img class="homelogo">Team Logo</img>
-        <h1 class="homename">Team Name</h1>
-        <p class="homescores">Current Scores</p>
-
-        <!--AwayTeam-->
-        <img class="awaylogo">Team Logo</img>
-        <h1 class="awayname">Team Name</h1>
-        <p class="awayscores">Current Scores</p>
+      <form id="gameSelect">
+        <div id="choosesection">
+        <label>Choose a League</label> 
+        <input list="browsers" type="text" id="leagueInput"/>
+        <datalist id="browsers"> 
+            <option value="Ghana">
+            <option value="England">
+        </datalist>
+        <br><br>
       </div>
 
+      <div id="loading" class="hide">
+    
+      </div>
+        <input type="submit" id="submitbtn">
+      </form>
+
+      <button type="button" id="restart" class="restart hide">Search for another league</button>
+
+      <div class="hide" id="scoresInfo">
+        <img id="leagueBadge"></img>
+        <h1 id="leagueName"></h1>
+        <h2 id="currentdate"></h2>
+
+            <!--The below section should be duplicated by a for loop for searched matches-->
+           
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
     <script src="./livescript.js"></script>
 </body>
 </html>

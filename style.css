@@ -23,6 +23,10 @@ body {
     left: 0;
     height: 70px;
 }
+
+.placeholder {
+    max-width: 61px;
+}
 .navbar a {
     float: left;
     display: block;
@@ -103,7 +107,7 @@ label {
     display: none;
 }
 #submitbtn {
-    margin: 0px 45%;
+    margin: 20px 45%;
 }
 
 .searchtitle {
@@ -175,3 +179,12 @@ label {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+
+#choosesection {
+    margin: 0px 45%;
+}
+
+#restart {
+    margin-top: 70px;
+}
