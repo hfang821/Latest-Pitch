@@ -16,6 +16,10 @@ var leagueSearch = function(id) {
 }
 
 var displaySavedLeagues = function(id,name){
+    console.log(name);
+    if(name===null){
+        return;
+    }
         var savedLeagues = document.createElement("button");
         savedLeagues.innerHTML = name + ' League';
         savedLeagues.classList.add("button", "small", "expanded");

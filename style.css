@@ -205,7 +205,13 @@ label {
 }
 .restart {
     margin-top: 70px;
+    color: white;
+    /* margin: 15px; */
+    border: solid 2px red;
+    padding: 10px;
+    cursor: pointer;
 }
+
 #leagueInput {
     background: none;
     cursor: pointer;
