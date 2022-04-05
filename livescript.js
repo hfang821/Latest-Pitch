@@ -8,6 +8,9 @@ var leagueNameEl = document.getElementById('leagueName');
 var restartEl = document.getElementById('restart');
 var dateEl = document.getElementById('currentdate');
 
+var idArray = [];
+var leagueArray = [];
+
 
 var league = [
     {
@@ -77,14 +80,15 @@ var displayScores = function(scoresInfo){
     leagueBadgeEl.src = scoresInfo[0].league_logo;
     leagueNameEl.textContent = "You are viewing the latest games from a " + scoresInfo[0].league_name;
     dateEl.textContent = "You are viewing the games happening today! Current Date: " + moment().format('YYYY-MM-DD');
-
+    scoreBoardEl.innerHTML += `<img src="./images/197598_like_modern_fav_add_favourites_icon.png" class="likeIcon" onclick="likeHandler(this)" id="${scoresInfo[0].league_id}" name="${scoresInfo[0].country_name}">`;
 
     for (i=0; i<scoresInfo.length; i++){
         
         
         scoreBoardEl.innerHTML += 
 
-        `<div class="grid-x">
+        `
+        <div class="grid-x">
 
             <div class="cell small-4">
                 <h1 class="home">Home Team:</h1>
@@ -120,7 +124,7 @@ var displayScores = function(scoresInfo){
             even.setAttribute('src', './images/scale-icon-413.png');
             even.classList.add('evensymbol')
             even2.setAttribute('src', './images/scale-icon-413.png');
-            even2.classList.add('evensymbol')
+            even2.classList.add('evensymbol');
 
             if(scoresInfo[scoresInfo.length-1-i].match_hometeam_ft_score > scoresInfo[scoresInfo.length-1-i].match_awayteam_ft_score) {
                 homeEl[i].append(winner);
@@ -131,9 +135,24 @@ var displayScores = function(scoresInfo){
                 awayEl[i].append(even2);
             }
     }
+   // var likeHandler
+}
+
+var likeHandler = function(element) {
+    var id=element.id;
+    var name=element.name;
+    idArray.push(id);
+    leagueArray.push(name);
+
+    console.log(idArray);
+    console.log(leagueArray);
+
+    window.localStorage.setItem("leagueid",JSON.stringify(idArray));
+    window.localStorage.setItem("leagueName",JSON.stringify(leagueArray));
 }
 
 
-
+// var likeEl = document.querySelectorAll('.likeIcon');
+// likeEl.addEventListener('click', likeHandler);
 submitEl.addEventListener('click', formSubmitHandler);
 restartEl.addEventListener('click', function(){location.reload()});

@@ -13,6 +13,9 @@ var loadEl = document.getElementById('loading');
 periodFrom.setAttribute('max', moment().format('YYYY-MM-DD'))
 periodTo.setAttribute('max', moment().format('YYYY-MM-DD'));
 
+var idArray = [];
+var leagueArray = [];
+
 var league = [
     {
     league_name: 'england',
@@ -30,8 +33,8 @@ var formSubmitHandler = function(event){
     event.preventDefault();
 
     //get value from the date range of the search
-    var rangeFrom = periodFrom.value 
-    var rangeTo = periodTo.value
+    var rangeFrom = periodFrom.value;
+    var rangeTo = periodTo.value;
 
     //get value from the league name
     var leagueSelected = leagueInputEl.value.trim().toLowerCase();
@@ -80,6 +83,7 @@ var displayScores = function(scoresInfo){
 
     leagueBadgeEl.src = scoresInfo[0].league_logo;
     leagueNameEl.textContent = "You are viewing the latest games from a " + scoresInfo[0].league_name;
+    scoreBoardEl.innerHTML += `<img src="./images/197598_like_modern_fav_add_favourites_icon.png" class="likeIcon" onclick="likeHandler(this)" id="${scoresInfo[0].league_id}" name="${scoresInfo[0].country_name}">`;
 
     for (i=0; i<scoresInfo.length; i++){
         
@@ -134,6 +138,19 @@ var displayScores = function(scoresInfo){
                 awayEl[i].append(even2);
             }
     }
+}
+
+var likeHandler = function(element) {
+    var id=element.id;
+    var name=element.name;
+    idArray.push(id);
+    leagueArray.push(name);
+
+    console.log(idArray);
+    console.log(leagueArray);
+
+    window.localStorage.setItem("pastleagueid",JSON.stringify(idArray));
+    window.localStorage.setItem("pastleagueName",JSON.stringify(leagueArray));
 }
 
 submitEl.addEventListener('click', formSubmitHandler)
