@@ -19,20 +19,20 @@
         <a href="standings.html">STANDINGS</a>
     </div>  
 
+    <div id="leagueIconContainer" class="grid-x">
+      <img class="standingsicon cell small-2" id="country1" src="https://apiv3.apifootball.com/badges/logo_country/44_england.png" ></img>
+      <img class="standingsicon cell small-2" id="country2" src="https://apiv3.apifootball.com/badges/logo_country/50_ghana.png" ></img> 
+    </div>
+
     <div>
         <h1 class="favteam">View the standings of your favorite league</h1>
+        <button class="button small expanded" id="clear">Clear Your Favorites</button>
         <div id="storedLeagues"></div>
     </div>
 
-    <div id="leagueIconContainer" class="grid-x">
-        <div class="standingsicon cell small-6"></div>
-        <div class="standingsicon cell small-6"></div>
-    </div>
-
-    <div id="teamStandings"></div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script src="./standings.js"></script>
     <script src="./pastscript.js"></script>
     <!-- <script src="./livescript.js"></script> -->
     <script src="./script.js"></script>

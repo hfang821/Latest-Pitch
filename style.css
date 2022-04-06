@@ -253,3 +253,10 @@ input[type=text], select  {
     background-color: white;
     color: #0f1010;
   }
+
+
+#leagueIconContainer {
+    margin-top: 81px;
+    padding: 50px;
+    border-bottom: solid 1px white;
+}
