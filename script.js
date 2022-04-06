@@ -1,4 +1,6 @@
 var savedTeamEl = document.getElementById("storedLeagues");
+var englandTimeEl = document.getElementById("englandTime");
+var ghanaTimeEl = document.getElementById("GhanaTime"); 
 
 
 var leagueSearch = function(id) {
@@ -14,6 +16,45 @@ var leagueSearch = function(id) {
 
     //displaySavedTeams();
 }
+
+
+var worldClockSearch = function(area, location) {
+    
+     var apiUrl3 = 'http://worldtimeapi.org/api/timezone/' + area +'/' + location;
+    fetch(apiUrl3)
+    .then(response => response.json())
+    .then(function(data){
+        console.log(data);
+        displayTime(data);
+    })
+    .catch(err => console.log(err));
+}
+
+var worldClockSearchGhana = function(area, location) {
+    
+    var apiUrl3 = 'http://worldtimeapi.org/api/timezone/' + area +'/' + location;
+   fetch(apiUrl3)
+   .then(response => response.json())
+   .then(function(data){
+       console.log(data);
+       displayGhanaTime(data);
+   })
+   .catch(err => console.log(err));
+}
+
+
+var displayTime = function(timeData) {
+    var time = timeData.datetime;
+    time = moment(time).format('MMMM Do YYYY, h:mm:ss a');
+    englandTimeEl.innerHTML = 'England Time:' + time + ' ' + timeData.utc_offset;;
+}
+
+var displayGhanaTime = function (timeData) {
+    var time = timeData.datetime;
+    time = moment(time).format('MMMM Do YYYY, h:mm:ss a');
+    ghanaTimeEl.innerHTML = 'Ghana Time: ' + time + ' ' + timeData.utc_offset;
+}
+
 
 var displaySavedLeagues = function(id,name){
     console.log(name);
@@ -67,3 +108,5 @@ window.addEventListener("load", function() {
 
 
 savedTeamEl.addEventListener("click", searchStandings);
+window.addEventListener("load", worldClockSearch('Europe','London'));
+window.addEventListener("load", worldClockSearchGhana('Africa','Accra'));

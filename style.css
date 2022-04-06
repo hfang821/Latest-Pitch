@@ -235,6 +235,11 @@ input[type=text], select  {
     border: 1px solid #0f1010;
     background-image: none;
   }
+  
+  input[type=text]::-webkit-calendar-picker-indicator {
+    display: none !important;
+  }
+
   input[type=submit] {
     background: none;
     color: white;
