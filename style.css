@@ -101,19 +101,19 @@ h2 {
     font-size: 2.5vw;
     white-space: nowrap;
 }
-.favteam {
-    text-align: center;
-    font-size: 3vw;
-    font-family: 'Electrolize', sans-serif;
-}
-
 .button.expanded {
     display: block;
     width: 80%;
     /* margin-right: 43%; */
     margin-left: 11%;
 }
-
+/*standings styles*/
+.favteam {
+    text-align: center;
+    font-size: 3vw;
+    font-family: 'Electrolize', sans-serif;
+    padding: 100px 0px 0px 0px;
+}
 /*general js styles*/
 .hide {
     display: none;
@@ -152,7 +152,7 @@ h2 {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
+favteam
 .likeIcon {
     max-width: 7%;
 }
@@ -253,4 +253,3 @@ input[type=text], select  {
     background-color: white;
     color: #0f1010;
   }
- 
