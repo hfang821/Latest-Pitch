@@ -80,7 +80,7 @@ var displayScores = function(scoresInfo){
     leagueBadgeEl.src = scoresInfo[0].league_logo;
     leagueNameEl.textContent = "You are viewing the latest games from a " + scoresInfo[0].league_name;
     dateEl.textContent = "You are viewing the games happening today! Current Date: " + moment().format('YYYY-MM-DD');
-    scoreBoardEl.innerHTML += `<img src="./images/197598_like_modern_fav_add_favourites_icon.png" class="likeIcon" onclick="likeHandler(this)" id="${scoresInfo[0].league_id}" name="${scoresInfo[0].country_name}">`;
+    //scoreBoardEl.innerHTML += `<img src="./images/197598_like_modern_fav_add_favourites_icon.png" class="likeIcon" onclick="likeHandler(this)" id="${scoresInfo[0].league_id}" name="${scoresInfo[0].country_name}">`;
 
     for (i=0; i<scoresInfo.length; i++){
         
@@ -138,7 +138,7 @@ var displayScores = function(scoresInfo){
    // var likeHandler
 }
 
-var likeHandler = function(element) {
+/* var likeHandler = function(element) {
     var id=element.id;
     var name=element.name;
     idArray.push(id);
@@ -149,7 +149,7 @@ var likeHandler = function(element) {
 
     window.localStorage.setItem("leagueid",JSON.stringify(idArray));
     window.localStorage.setItem("leagueName",JSON.stringify(leagueArray));
-}
+} */
 
 
 // var likeEl = document.querySelectorAll('.likeIcon');
