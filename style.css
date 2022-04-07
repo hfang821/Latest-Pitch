@@ -190,6 +190,9 @@ h2 {
 label {
     color: white;
 }
+#leagueBadge{
+    margin-top: 100px;
+}
 .searchtitle {
     font-size: 20px;
 }
@@ -262,7 +265,6 @@ label {
     margin-left: 35px;
 }
 .restart {
-    margin-top: 70px;
     color: white;
     border: solid 2px red;
     padding: 10px;

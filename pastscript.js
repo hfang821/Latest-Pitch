@@ -154,4 +154,5 @@ var displayScores = function(scoresInfo){
 }*/
 
 submitEl.addEventListener('click', formSubmitHandler)
-restartEl.addEventListener('click', function(){location.reload()});
+restartEl.addEventListener('click', function(){
+   console.log(target)});
