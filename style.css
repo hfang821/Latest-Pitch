@@ -119,12 +119,6 @@ h2 {
     font-size: 2.5vw;
     white-space: nowrap;
 }
-.button.expanded {
-    display: block;
-    width: 80%;
-    /* margin-right: 43%; */
-    margin-left: 11%;
-}
 
 /*general js styles*/
 .hide {
@@ -141,7 +135,7 @@ h2 {
 .choose {
     padding: 0px 0px 0px 50px;
 }
-.grid-x {
+.border-x {
     border-top: 1px solid white;
 }
 .winnersymbol{
@@ -154,26 +148,28 @@ h2 {
     max-width: 60%;
 }
 .soccerimg2{
-    height: 80%;
-    width: auto;
-    margin-top: 70px;
-    margin-left: 200px;
-    opacity: 0.15;
-    position: absolute;
- }
+    height: auto;
+    width: 15%;
+    opacity: 0.5;
+    transition: all .2s ease-in-out;
+    margin-left: 30px;
+}
+.soccerimg2:hover{
+    transform: scale(1.2);
+}
 .soccerimg3{
-    height: 40%;
-    width: auto;
-    opacity: 0.15;
-    position: absolute;
- }
+    height: auto;
+    width: 15%;
+    opacity: 0.5;
+    transition: all .2s ease-in-out;
+    margin-left: 30px;
+}
+.soccerimg3:hover{
+    transform: scale(1.2);
+}
 .loading {
     animation: spin 2s linear infinite;
     margin: 0% 46%;
-}
-.loading:hover {
-    /* animation: spin 2s linear infinite;
-    margin: 0% 46%; */
 }
 @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -268,7 +264,6 @@ label {
 .restart {
     margin-top: 70px;
     color: white;
-    /* margin: 15px; */
     border: solid 2px red;
     padding: 10px;
     cursor: pointer;
@@ -296,20 +291,7 @@ input[type=text]:focus {
 input[type=text]::-webkit-calendar-picker-indicator {
     display: none !important;
 }
-input[type=submit] {
-    background: none;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition-duration: 0.5s;
-}
-input[type=submit]:hover {
-    background-color: white;
-    color: #0f1010;
-    float: left;
-}
+
 /*standings styles*/
 .favteam {
     text-align: center;
@@ -320,5 +302,36 @@ input[type=submit]:hover {
 #leagueIconContainer {
     margin-top: 81px;
     padding: 50px;
-    border-bottom: solid 1px white;
+    
+}
+#country1 {
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+#country1:hover {
+    transform: scale(1.5);
+}
+#country2 {
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+#country2:hover {
+    transform: scale(1.5);
+}
+.button.expanded {
+    display: block;
+    width: 80%;
+    margin-left: 11%;
+    background: none;
+    transition-duration: 0.5s;
+}
+.button.expanded:hover {
+    display: block;
+    width: 80%;
+    margin-left: 11%;
+    background: none;
+    border: 1px solid white;
+    border-radius: 3px;
 }

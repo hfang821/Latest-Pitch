@@ -90,7 +90,7 @@ var displayScores = function(scoresInfo){
         
         scoreBoardEl.innerHTML += 
 
-        `<div class="grid-x">
+        `<div class="grid-x border-x">
 
             <div class="cell small-4">
                 <h1 class="home">Home Team:</h1>
