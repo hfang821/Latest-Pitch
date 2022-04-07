@@ -178,6 +178,10 @@ h2 {
     animation: spin 2s linear infinite;
     margin: 0% 46%;
 }
+#loading:hover {
+    animation: spin 2s linear infinite;
+    margin: 0% 46%;
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -319,4 +323,9 @@ input[type=submit]:hover {
     font-size: 3vw;
     font-family: 'Electrolize', sans-serif;
     padding: 100px 0px 0px 0px;
+}
+#leagueIconContainer {
+    margin-top: 81px;
+    padding: 50px;
+    border-bottom: solid 1px white;
 }
