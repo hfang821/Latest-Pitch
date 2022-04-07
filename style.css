@@ -161,26 +161,19 @@ h2 {
     opacity: 0.15;
     position: absolute;
  }
- .soccerimg3{
-    height: 80%;
+.soccerimg3{
+    height: 40%;
     width: auto;
-    margin-top: 70px;
-    margin-left: 250px;
     opacity: 0.15;
     position: absolute;
  }
-#loading {
-    border: 6px solid #f3f3f3; /* Light grey */
-    border-top: 6px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
+.loading {
     animation: spin 2s linear infinite;
     margin: 0% 46%;
 }
-#loading:hover {
-    animation: spin 2s linear infinite;
-    margin: 0% 46%;
+.loading:hover {
+    /* animation: spin 2s linear infinite;
+    margin: 0% 46%; */
 }
 @keyframes spin {
     0% { transform: rotate(0deg); }

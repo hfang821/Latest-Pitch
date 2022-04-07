@@ -34,14 +34,11 @@ var formSubmitHandler = function(event){
     
     for(let i =0; i<league.length; i++) {
         if(leagueSelected===league[i].league_name){
-            loadEl.classList.remove('hide');
+            submitEl.classList.add('loading');
             getScores(league[i].league_id);
             }
         }
-    
-
     leagueInputEl.value = '';
-
 }
 
 var getScores = function(league_id) {
@@ -72,7 +69,6 @@ var noMatch = function(error){
 
 var displayScores = function(scoresInfo){
     
-    loadEl.classList.add('hide');
     scoreBoardEl.classList.remove("hide");
     formEl.classList.add("hide");
     restartEl.classList.remove("hide");

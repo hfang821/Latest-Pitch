@@ -42,7 +42,7 @@ var formSubmitHandler = function(event){
     if(rangeFrom<rangeTo){
     for(let i =0; i<league.length; i++) {
         if(leagueSelected===league[i].league_name){
-            loadEl.classList.remove('hide');
+            submitEl.classList.add('loading');
             getScores(league[i].league_id, rangeFrom, rangeTo);
             }
         }
@@ -77,7 +77,7 @@ var getScores = function(league_id, from, to) {
 
 var displayScores = function(scoresInfo){
     
-    loadEl.classList.add('hide');
+    // loadEl.classList.add('hide');
     scoreBoardEl.classList.remove("hide");
     formEl.classList.add("hide");
 
