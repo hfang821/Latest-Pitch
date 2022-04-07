@@ -1,9 +1,11 @@
 @charset "UTF-8";
+
 /*html styles*/
 html {
     height: 100%;
     width: 100%;
 }
+
 /*body styles*/
 body {
     height: 100%;
@@ -16,10 +18,15 @@ body {
     padding: 0;
     margin: 0;
   }
+
 /*nav bar styles*/
 .soccerimg {
     height: 40px;
     width: auto;
+    transition: all .2s ease-in-out;
+}
+.soccerimg:hover {
+    transform: scale(1.3);
 }
 .navbar {
     background-color: #1a1b1b;
@@ -58,12 +65,23 @@ div.pullUp a:hover:before {
 .navbar a:hover {
    color: black;
 }
+
 /*homepage styles*/
 .sitetitle {
     color: white;
     text-align: center;
     font-size: 8vw; 
-    padding: 80px 0px 30px 0px;
+    padding: 90px 0px 30px 0px;
+    white-space: nowrap;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+}
+.sitedesc {
+    color: white;
+    text-align: center;
+    font-size: 2vw; 
+    padding: 0px 0px 30px 0px;
     white-space: nowrap;
     display: block;
     height: auto;
@@ -107,25 +125,21 @@ h2 {
     /* margin-right: 43%; */
     margin-left: 11%;
 }
-/*standings styles*/
-.favteam {
-    text-align: center;
-    font-size: 3vw;
-    font-family: 'Electrolize', sans-serif;
-    padding: 100px 0px 0px 0px;
-}
+
 /*general js styles*/
 .hide {
     display: none;
 }
-#submitbtn {
-    margin: 20px 45%;
-}
 #leagueSelect {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+   float: left;
+   display: block;
+}
+#gameSelect {
+    margin-top: 100px;
+    float: left;
+}
+.choose {
+    padding: 0px 0px 0px 50px;
 }
 .grid-x {
     border-top: 1px solid white;
@@ -139,6 +153,22 @@ h2 {
 .versus {
     max-width: 60%;
 }
+.soccerimg2{
+    height: 80%;
+    width: auto;
+    margin-top: 70px;
+    margin-left: 200px;
+    opacity: 0.15;
+    position: absolute;
+ }
+ .soccerimg3{
+    height: 80%;
+    width: auto;
+    margin-top: 70px;
+    margin-left: 250px;
+    opacity: 0.15;
+    position: absolute;
+ }
 #loading {
     border: 6px solid #f3f3f3; /* Light grey */
     border-top: 6px solid #3498db; /* Blue */
@@ -152,14 +182,18 @@ h2 {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-favteam
 .likeIcon {
     max-width: 7%;
 }
-/*paststyles*/
-#gameSelect {
+
+/*live styles*/
+.livesubmitbtn {
+    display: block;
+    position: fixed;
     margin-top: 100px;
+    margin-left: 35px;
 }
+/*past styles*/
 label {
     color: white;
 }
@@ -167,42 +201,72 @@ label {
     font-size: 20px;
 }
 #period {
-    font-size: 3.5vw;
+    font-size: 3vw;
     white-space: nowrap;
-    text-align: center;
+    float: left;
+    padding: 0px 0px 0px 50px;
 }
-#choose {
-    align-items: center;
-    margin: auto;
-    overflow: inherit;
-    width: 50%;
+.period {
+    display: block;
+    position: fixed;
+    margin-top: 100px;
 }
 .searchboxwhole {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    float: left;
+    padding: 40px 0px 0px 0px;
+    position: fixed;
+    margin-top: 170px;
 }
 .searchbox {
-    display: block;
-    position: relative;
+    float: left;
 }
 #fromDate {
     width: 200px;
     height: 50px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+    cursor: pointer;
 }
-#toDate {
-    width: 200px;
-    height: 50px;
+#fromDate:focus {
+    border: 1px solid #0f1010;
+    box-shadow: none;
+}
+#fromDate::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
 #from {
     margin: 0px 50px;
 }
+#toDate {
+    width: 200px;
+    height: 50px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+#toDate:focus {
+    border: 1px solid #0f1010;
+    box-shadow: none;
+}
+#toDate::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
 #to {
     margin: 0px 50px;
 }
-#choosesection {
-    margin: 0px 45%;
+.pastsubmitbtn {
+    display: block;
+    position: fixed;
+    margin-top: 450px;
+    margin-left: 35px;
 }
 .restart {
     margin-top: 70px;
@@ -212,12 +276,10 @@ label {
     padding: 10px;
     cursor: pointer;
 }
-
 #leagueInput {
     background: none;
     cursor: pointer;
     color: white;
-    background-image: none;
 }
 #leagueInput:focus {
     background-color: none;
@@ -230,17 +292,14 @@ input[type=text], select  {
     box-sizing: border-box;
     transition-duration: 0.5s;
     background-image: none;
-  }
-  input[type=text]:focus {
+}
+input[type=text]:focus {
     border: 1px solid #0f1010;
-    background-image: none;
-  }
-  
-  input[type=text]::-webkit-calendar-picker-indicator {
+}
+input[type=text]::-webkit-calendar-picker-indicator {
     display: none !important;
-  }
-
-  input[type=submit] {
+}
+input[type=submit] {
     background: none;
     color: white;
     padding: 8px 16px;
@@ -248,8 +307,16 @@ input[type=text], select  {
     border-radius: 3px;
     cursor: pointer;
     transition-duration: 0.5s;
-  }
-  input[type=submit]:hover {
+}
+input[type=submit]:hover {
     background-color: white;
     color: #0f1010;
-  }
+    float: left;
+}
+/*standings styles*/
+.favteam {
+    text-align: center;
+    font-size: 3vw;
+    font-family: 'Electrolize', sans-serif;
+    padding: 100px 0px 0px 0px;
+}

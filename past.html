@@ -24,8 +24,8 @@
     <!--prompt a user of the period of the past games && the League Name. (from YYYY-MM-DD to YYYY-MM-DD)-->
     <form id="gameSelect">
         
-        <div id="leagueSelect">
-        <div id="choose">
+    <div id="leagueSelect">
+        <div class="choose">
         <label>Choose a League</label> 
         <input list="browsers" type="text" id="leagueInput"/>
         <datalist id="browsers"> 
@@ -33,11 +33,11 @@
             <option value="England">
         </datalist>
         <br><br>
-         </div>
-        
-        <label id="period">Choose the period of past Games: </label>
+         </div>   
     </div>
-        
+    <div class="period">
+    <label id="period">Choose the period of past Games: </label>
+    </div>
     <div class="searchboxwhole">
         <div class="searchbox" id="from">
         <p class="searchtitle">From</p>
@@ -51,15 +51,18 @@
 
     <div id="loading" class="hide"></div>
 
-    <input type="submit" id="submitbtn"></form>
+    <input type="submit" id="submitbtn" class="pastsubmitbtn">
+
+    </form>
+
+    <img src="images/soccer3.png" alt="soccerimg3" class="soccerimg3">
 
     <div class="hide" id="scoresInfo">
-        <img id="leagueBadge"></img>
-        <h1 id="leagueName"></h1>
+    <img id="leagueBadge"></img>
+    <h1 id="leagueName"></h1>
 
             <!--The below section should be duplicated by a for loop for searched matches-->
            
-
         <button type="button" id="restart" class="restart">Search for another league/period.</button>
     </div>
 

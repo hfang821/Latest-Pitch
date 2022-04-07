@@ -18,7 +18,8 @@
     </div>    
 
       <form id="gameSelect">
-        <div id="choosesection">
+        <div id="leagueSelect">
+        <div class="choose">
         <label>Choose a League</label> 
         <input list="browsers" type="text" id="leagueInput"/>
         <datalist id="browsers"> 
@@ -27,14 +28,16 @@
         </datalist>
         <br><br>
       </div>
+    </div>
 
       <div id="loading" class="hide">
     
       </div>
-        <input type="submit" id="submitbtn">
-      </form>
+        <input type="submit" id="submitbtn" class="livesubmitbtn"></form>
 
       <button type="button" id="restart" class="restart hide">Search for another league</button>
+
+      <img src="images/soccer2.png" alt="soccerimg2" class="soccerimg2">
 
       <div class="hide" id="scoresInfo">
         <img id="leagueBadge"></img>
