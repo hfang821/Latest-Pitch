@@ -48,6 +48,11 @@ body {
     text-align: center;
     transition-duration: 0.5s;
 }
+@media only screen and (max-width: 600px) {
+    .navbar a {
+    font-size: 12px;
+    }
+}
 div.pullUp a:before {
     position: absolute;
     width: 100%;
@@ -191,7 +196,7 @@ label {
     color: white;
 }
 #leagueBadge{
-    margin-top: 100px;
+    margin-top: 52px;
 }
 .searchtitle {
     font-size: 20px;
