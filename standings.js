@@ -6,34 +6,32 @@ var clearEl = document.getElementById("clear");
 var idArray = [];
 var leagueArray = [];
 
-// var getScores = function() {
-    
-//     var apiKey = '157ce318877b28613f3f957ccd28aa5239d122320755f5ddb85085a83b831836';
+var saveItems = function(event) {
+    var name = event.target.getAttribute("data-name");
+    var id = event.target.getAttribute("data-id");
+    var arraySomething = JSON.parse(window.localStorage.getItem('leagueidcheck'));
 
-
-//     var apiUrl = 'https://apiv3.apifootball.com/?action=get_leagues'+'&APIkey=' + apiKey;
-//     fetch(apiUrl)
-// 	.then(response => response.json())
-// 	.then(function(data){
-//         console.log(data);
-//         displayLogo(data);
-//     })
-// 	.catch(err => noMatch(err));
-//         //console.error(err));
-// }
-
-// getScores();
-
-// var displayLogo = function(leagueinfo) {
-//     for(let i =0; i<leagueinfo.length; i++) {
-//         var logo = document.createElement('img');
-//         logo.src = leagueinfo[i].country_logo;
-//         logo.classList.add('standingsicon', 'cell' ,'small-2');
-//         logo.setAttribute('id', leagueinfo[i].country_name);
-//         countryLeagueIcon.appendChild(logo);
-//     }
-// }
-
+    //1. nothing in the array
+    if(!arraySomething) {
+        idArray.push(id);
+        leagueArray.push(name);
+        window.localStorage.setItem("leagueidcheck",JSON.stringify(idArray));
+        window.localStorage.setItem("leagueNamecheck",JSON.stringify(leagueArray));
+        getItem();
+    } //2. if doesnt exist, will return -1 and exit, checking if already exists in the local storage, it will proceed.
+    else if(arraySomething.indexOf(id) != -1) {
+        return;
+    } //3. where array is not empty && the event.target is not in the array, proceed to else.
+    else {
+        idArray.push(id);
+        leagueArray.push(name);
+        window.localStorage.setItem("leagueidcheck",JSON.stringify(idArray));
+        window.localStorage.setItem("leagueNamecheck",JSON.stringify(leagueArray));
+        getItem();
+    }
+    console.log(idArray);
+    console.log(leagueArray);
+}
 
 var leagueSearch = function(id) {
     var apiKey = '157ce318877b28613f3f957ccd28aa5239d122320755f5ddb85085a83b831836';
@@ -45,8 +43,6 @@ var leagueSearch = function(id) {
         displayStandings(data);
     })
 	.catch(err => console.error(err));
-
-    //displaySavedTeams();
 }
 
 var displaySavedLeagues = function(id,name){
@@ -70,42 +66,23 @@ var displaySavedLeagues = function(id,name){
 } 
 
 var displayStandings = function(standingInfo){
-    // var savedLeaguesEl = document.querySelector('[leagueId="177"]');
-    // savedLeaguesEl.classList.add('hide');
-
     for(let i =0; i<standingInfo.length; i++) {
         var leagueStanding = document.createElement("button");
         leagueStanding.innerHTML = (i+1) + ': ' + standingInfo[i].team_name;
         leagueStanding.classList.add("button", "small", "expanded");
         savedTeamEl.appendChild(leagueStanding);
     }
-
 }
 
 var searchStandings = function(event) {
-   
-
     var id = event.target.getAttribute('leagueId');
-    
     leagueSearch(id);
-
-    //savedTeamEl.classList.add("hide");
 }
 
 var getItem = function() {
-   /* var leaguesnow = JSON.parse(window.localStorage.getItem("leagueid"));
-    var namesnow = JSON.parse(window.localStorage.getItem("leagueName"));
-    var leaguespast = JSON.parse(window.localStorage.getItem("pastleagueid"));
-    var namepast = JSON.parse(window.localStorage.getItem("pastleagueName")); */
     var namecheck = JSON.parse(window.localStorage.getItem("leagueNamecheck"));
     var leaguecheck = JSON.parse(window.localStorage.getItem("leagueidcheck"));
-
-    // var leagues = leaguesnow.concat(leaguespast).concat(leaguecheck);
-    // var names = namesnow.concat(namepast).concat(namecheck);
-
-   
     displaySavedLeagues(leaguecheck,namecheck);
-    
 };
 
 var reloadHandler = function() {
@@ -118,58 +95,15 @@ var reloadHandler = function() {
     savedLeagues.classList.add("button", "small", "expanded");
     savedLeagues.setAttribute('leagueId', leaguecheck[i]);
     savedTeamEl.appendChild(savedLeagues);
-}
-}
-
-// var englandLogoEl = document.getElementById('England');
-// var ghanaLogoEl = document.getElementById('Ghana');
-
-country1LeagueIcon.addEventListener('click', function(){
-    var name = 'England';
-    var id = '149';
-
-    if(leagueArray[0]!='England' && leagueArray[1]!='England') {
-        idArray.push(id);
-        leagueArray.push(name);
-
-        window.localStorage.setItem("leagueidcheck",JSON.stringify(idArray));
-        window.localStorage.setItem("leagueNamecheck",JSON.stringify(leagueArray));
-    
-        getItem();
     }
+}
 
-    console.log(idArray);
-    console.log(leagueArray);
-
-    
-   
-})
-
-country2LeagueIcon.addEventListener('click', function(){
-    var name = 'Ghana';
-    var id = '177';
-
-    if(leagueArray[0]!='Ghana' && leagueArray[1]!='Ghana') {
-    idArray.push(id);
-    leagueArray.push(name);
-
-    window.localStorage.setItem("leagueidcheck",JSON.stringify(idArray));
-    window.localStorage.setItem("leagueNamecheck",JSON.stringify(leagueArray));
-
-    getItem();
-    }
-
-    console.log(idArray);
-    console.log(leagueArray);
-
-    
-})
-
+country1LeagueIcon.addEventListener('click', saveItems);
+country2LeagueIcon.addEventListener('click', saveItems);
 savedTeamEl.addEventListener("click", searchStandings);
 clearEl.addEventListener('click', function(){
     window.localStorage.removeItem("leagueNamecheck");
     window.localStorage.removeItem("leagueidcheck");
     window.location.reload();
 })
-
 window.addEventListener("load", reloadHandler);

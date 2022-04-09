@@ -9,6 +9,7 @@ var periodFrom = document.getElementById('fromDate');
 var periodTo = document.getElementById('toDate');
 var cloneEl = document.getElementById('clone');
 var loadEl = document.getElementById('loading');
+console.log(restartEl);
 
 periodFrom.setAttribute('max', moment().format('YYYY-MM-DD'))
 periodTo.setAttribute('max', moment().format('YYYY-MM-DD'));
@@ -154,5 +155,3 @@ var displayScores = function(scoresInfo){
 }*/
 
 submitEl.addEventListener('click', formSubmitHandler)
-restartEl.addEventListener('click', function(){
-   console.log(target)});
