@@ -28,15 +28,37 @@ var worldClockSearchGhana = function(area, location) {
 
 
 var displayTime = function(timeData) {
-    var time = timeData.datetime;
+    var time = timeData.datetime
+   // let newTime = time.split("T")[1].split(".")[0]
+    console.log("time", time)
+    
     //time = moment(time).format('MMMM Do YYYY, h:mm:ss a');
-    englandTimeEl.innerHTML = 'England Time:' + time ;
+  //  englandTimeEl.innerHTML = 'England Time:' + newTime ;
 }
+
+// var london = new Date().toISOString().split("T")[1].split(".")[0]
+    // var london = moment().tz("Europe/London").format();
+//london.toLocaleString('en-GB', { timeZone: 'Europe/London' });
+// console.log("london",london)
+ //setInterval(london, 1000)
+
+ var updateEngland = function() {
+    document.getElementById("datetime")
+    englandTimeEl.innerHTML = "England Time: " + moment.utc().add(1, "hours").format('MMMM Do YYYY, h:mm:ss a')
+}
+setInterval(updateEngland, 1000);
+
+
+var updateGhana = function() {
+    document.getElementById("datetime")
+    ghanaTimeEl.innerHTML = "Ghana Time: " + moment.utc().format('MMMM Do YYYY, h:mm:ss a')
+}
+setInterval(updateGhana, 1000)
 
 var displayGhanaTime = function (timeData) {
     var time = timeData.datetime;
     //time = moment(time).format('MMMM Do YYYY, h:mm:ss a');
-    ghanaTimeEl.innerHTML = 'Ghana Time: ' + time ;
+   // ghanaTimeEl.innerHTML = 'Ghana Time: ' + time ;
 }
 
 
