@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+/*html styles*/
+html {
+    height: 100%;
+    width: 100%;
+}
+
+/*body styles*/
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #0f1010;
+    color: white;
+    font-family: 'Electrolize', sans-serif;
+}
+* {
+    padding: 0;
+    margin: 0;
+  }
+
+/*nav bar styles*/
+.soccerimg {
+    height: 40px;
+    width: auto;
+    transition: all .2s ease-in-out;
+}
+.soccerimg:hover {
+    transform: scale(1.3);
+}
+.navbar {
+    background-color: #1a1b1b;
+    position: fixed; 
+    width: 100%; 
+    top: 0;
+    left: 0;
+    height: 70px;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+@media only screen and (max-width: 600px) {
+    .navbar a {
+    font-size: 12px;
+    }
+}
+div.pullUp a:before {
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    left: 0px;
+    bottom: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+div.pullUp a:hover:before {
+    height: 3%;
+}
+.navbar a:hover {
+   color: black;
+}
+
+/*homepage styles*/
+.sitetitle {
+    color: white;
+    text-align: center;
+    font-size: 8vw; 
+    padding: 90px 0px 30px 0px;
+    white-space: nowrap;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+}
+.sitedesc {
+    color: white;
+    text-align: center;
+    font-size: 2vw; 
+    padding: 0px 0px 30px 0px;
+    white-space: nowrap;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+}
+.clock{
+    padding: 0px 0px 50px 0px;
+}
+.timetitle {
+    font-family: 'Electrolize', sans-serif;
+    color: #484848;
+    display: inline;
+}
+.h2container {
+    text-align: center;
+}
+h2 {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+    white-space: nowrap;
+    font-size: 2.5vw;
+}
+.viewertime {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5vw;
+    white-space: nowrap;
+}
+.englandtime {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5vw;
+    white-space: nowrap;
+}
+.ghanatime {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5vw;
+    white-space: nowrap;
+}
+
+/*general js styles*/
+.hide {
+    display: none;
+}
+#leagueSelect {
+   float: left;
+   display: block;
+}
+#gameSelect {
+    margin-top: 100px;
+    float: left;
+}
+.choose {
+    padding: 0px 0px 0px 50px;
+}
+.border-x {
+    border-top: 1px solid white;
+}
+.winnersymbol{
+    max-width: 15%;
+}
+.evensymbol{
+    max-width: 10%;
+}
+.versus {
+    max-width: 60%;
+}
+.soccerimg2{
+    height: auto;
+    width: 15%;
+    opacity: 0.5;
+    transition: all .2s ease-in-out;
+    margin-left: 30px;
+}
+.soccerimg2:hover{
+    transform: scale(1.2);
+}
+.soccerimg3{
+    height: auto;
+    width: 15%;
+    opacity: 0.5;
+    transition: all .2s ease-in-out;
+    margin-left: 30px;
+}
+.soccerimg3:hover{
+    transform: scale(1.2);
+}
+.loading {
+    animation: spin 2s linear infinite;
+    margin: 0% 46%;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.likeIcon {
+    max-width: 7%;
+}
+
+/*live styles*/
+.livesubmitbtn {
+    display: block;
+    position: fixed;
+    margin-top: 100px;
+    margin-left: 35px;
+}
+/*past styles*/
+label {
+    color: white;
+}
+#leagueBadge{
+    margin-top: 52px;
+}
+.searchtitle {
+    font-size: 20px;
+}
+#period {
+    font-size: 3vw;
+    white-space: nowrap;
+    float: left;
+    padding: 0px 0px 0px 50px;
+}
+.period {
+    display: block;
+    position: fixed;
+    margin-top: 100px;
+}
+.searchboxwhole {
+    float: left;
+    padding: 40px 0px 0px 0px;
+    position: fixed;
+    margin-top: 170px;
+}
+.searchbox {
+    float: left;
+}
+#fromDate {
+    width: 200px;
+    height: 50px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+#fromDate:focus {
+    border: 1px solid #0f1010;
+    box-shadow: none;
+}
+#fromDate::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+#from {
+    margin: 0px 50px;
+}
+#toDate {
+    width: 200px;
+    height: 50px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+#toDate:focus {
+    border: 1px solid #0f1010;
+    box-shadow: none;
+}
+#toDate::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+#to {
+    margin: 0px 50px;
+}
+.pastsubmitbtn {
+    display: block;
+    position: fixed;
+    margin-top: 450px;
+    margin-left: 35px;
+}
+.restart {
+    color: white;
+    border: solid 2px red;
+    padding: 10px;
+    cursor: pointer;
+}
+#leagueInput {
+    background: none;
+    cursor: pointer;
+    color: white;
+}
+#leagueInput:focus {
+    background-color: none;
+    box-shadow: none;
+    background-image: none;
+}
+input[type=text], select  {
+    border: 1px solid white;
+    border-radius: 3px;
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+    background-image: none;
+}
+input[type=text]:focus {
+    border: 1px solid #0f1010;
+}
+input[type=text]::-webkit-calendar-picker-indicator {
+    display: none !important;
+}
+
+/*standings styles*/
+.favteam {
+    text-align: center;
+    font-size: 3vw;
+    font-family: 'Electrolize', sans-serif;
+    padding: 100px 0px 0px 0px;
+}
+#leagueIconContainer {
+    margin-top: 81px;
+    padding: 50px;
+    
+}
+#country1 {
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+#country1:hover {
+    transform: scale(1.5);
+}
+#country2 {
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+#country2:hover {
+    transform: scale(1.5);
+}
+.button.expanded {
+    display: block;
+    width: 80%;
+    margin-left: 11%;
+    background: none;
+    transition-duration: 0.5s;
+}
+.button.expanded:hover {
+    display: block;
+    width: 80%;
+    margin-left: 11%;
+    background: none;
+    border: 1px solid white;
+    border-radius: 3px;
+} 

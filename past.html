@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <title>Footy Scores Social</title>
+</head>
+
+<body>
+    <div class="navbar pullUp">
+        <a href="index.html"><img src="images/soccer.png" alt="soccerimg" class="soccerimg"></a>
+        <a href="live.html">LIVE SCORES</a>
+        <a href="past.html">PAST SCORES</a>
+        <a href="standings.html">STANDINGS</a>
+    </div>  
+
+    <!--General information: Replicate this section in javaScript for more matches(set a max amount=5 of games shown)-->
+
+    <!--prompt a user of the period of the past games && the League Name. (from YYYY-MM-DD to YYYY-MM-DD)-->
+    <form id="gameSelect">
+        
+    <div id="leagueSelect">
+        <div class="choose">
+        <label>Choose a League</label> 
+        <input list="browsers" type="text" id="leagueInput"/>
+        <datalist id="browsers"> 
+            <option value="Ghana">
+            <option value="England">
+        </datalist>
+        <br><br>
+         </div>   
+    </div>
+    <div class="period">
+    <label id="period">Choose the period of past Games: </label>
+    </div>
+    <div class="searchboxwhole">
+        <div class="searchbox" id="from">
+        <p class="searchtitle">From</p>
+        <input type="date" id="fromDate"/>
+        </div>
+        <div class="searchbox" id="to">
+        <p class="searchtitle">To</p>
+        <input type="date" id="toDate"/><br><br>
+        </div>
+    </div>
+
+    <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <!-- <div id="loading" class="hide"></div> -->
+    <input type="image" src="images/soccer3.png" class="soccerimg3" id="submitbtn" alt="soccerimg3">
+
+    </form>
+
+   
+
+    <!-- <img src="images/soccer3.png" alt="soccerimg3" class="soccerimg3"> -->
+
+    <div class="hide" id="scoresInfo">
+    <img id="leagueBadge"></img>
+    <h1 id="leagueName"></h1>
+
+            <!--The below section should be duplicated by a for loop for searched matches-->
+           
+        <button type="button" id="restart" class="restart" onClick="window.location.reload()">Search for another league/period.</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script src="./pastscript.js"></script>
+    <!-- <script src="./livescript.js"></script> -->
+    <!-- <script src="./script.js"></script> -->
+</body>
+</html>

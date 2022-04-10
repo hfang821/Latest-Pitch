@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sport News</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Orbitron&display=swap" rel="stylesheet">
+    <title>Latest Pitch</title>
 </head>
 <body>
-    
+    <div class="navbar pullUp">
+        <a href="index.html"><img src="images/soccer.png" alt="soccerimg" class="soccerimg"></a>
+        <a href="live.html">LIVE SCORES</a>
+        <a href="past.html">PAST SCORES</a>
+        <a href="standings.html">STANDINGS</a>
+    </div>    
+
+     <p class="sitetitle">LATEST PITCH</p>
+
+     <p class="sitedesc">The latest scores of your favourite teams from the Ghana and non Premier League</p>
+  
+   <!--World Clock section-->
+        <div class="clock">
+        <!--The time zone of the viewer-->
+        <div class="h2container">
+            <h2 class="viewertime"><p class="timetitle" id="localTime">Local Time: </p></h2><br>
+         <!--The time zone of the game-->
+            <h2 class="englandtime"><p class="timetitle" id="englandTime">England Time</p></h2><br>
+
+            <h2 class="ghanatime"><p class="timetitle" id="GhanaTime">Ghana Time</p></h2>
+        </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./script.js"></script>
+    <script src="./livescript.js"></script>
+    <script src="./pastscript.js"></script>
 </body>
 </html>
