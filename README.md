@@ -1,7 +1,7 @@
 # Latest-Pitch
 
 ## Link to the Deployed Application:
-https://utorteam13.github.io/Team13_Project1/
+https://hfang821.github.io/Team13_Project1_FE/
 
 ## Description:
 
