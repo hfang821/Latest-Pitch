@@ -1,7 +1,7 @@
 # Latest-Pitch
 
 ## Link to the Deployed Application:
-https://hfang821.github.io/Team13_Project1_FE/
+<a href="https://hfang821.github.io/Latest-Pitch/" target="_blank">Latest Pitch</a>
 
 ## Description:
 
